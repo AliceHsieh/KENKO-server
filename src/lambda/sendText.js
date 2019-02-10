@@ -1,7 +1,7 @@
 exports.handler = function(event, context, callback) {
   // execute some code finally
 
-  require("../../ENV");
+  // require("../../ENV");
   // const twilio = require("twilio");
   try {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
