@@ -21,13 +21,13 @@ exports.handler = function(event, context, callback) {
         // console.log(message.body)
         callback(null, {
           statusCode: 200,
-          body: "recipient: " + recipient
+          textmessage: "textmessage: " + textmessage
         });
       })
       .catch(e => {
         callback(null, {
           statusCode: 200,
-          body: e.message
+          textmessage: e.message
         });
       });
   } catch (e) {
