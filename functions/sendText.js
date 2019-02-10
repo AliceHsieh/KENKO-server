@@ -1,7 +1,14 @@
 exports.handler = function(event, context, callback) {
     // require('./ENV');
     // execute some code finally
-    const twilio = require('twilio'); 
+    try{
+        const twilio = require('twilio'); 
+    } catch(e) {
+        callback(null, {
+            statusCode: 200,
+            body: e.message
+            });
+    }
 
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN; 
@@ -16,7 +23,12 @@ exports.handler = function(event, context, callback) {
         // console.log(message.body)
         callback(null, {
             statusCode: 200,
-            body: message.body
+            body: 'message.body'
+            });
+    }).catch(e=> {
+        callback(null, {
+            statusCode: 200,
+            body: e.message
             });
     });
 
