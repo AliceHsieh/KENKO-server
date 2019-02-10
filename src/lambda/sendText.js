@@ -14,7 +14,7 @@ exports.handler = function(event, context, callback) {
     client.messages
       .create({
         body: "HELLO: " + body,
-        to: "+16047158724", // Text this number
+        to: process.env.MY_NUMBER, // Text this number
         from: "+17786554127" // From my number
       })
       .then(message => {
