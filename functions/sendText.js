@@ -12,10 +12,13 @@ exports.handler = function(event, context, callback) {
         body: 'HELLO',
         to: '+16047158724',  // Text this number
         from: '+17786554127' // From myo number
-    }).then((message) => console.log(message.body));
-
-    callback(null, {
-    statusCode: 200,
-    body: "Hello, World"
+    }).then((message) => {
+        // console.log(message.body)
+        callback(null, {
+            statusCode: 200,
+            body: message.body
+            });
     });
+
+
 }
