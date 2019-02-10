@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "start": "netlify-lambda serve src/lambda",
+    "build": "netlify-lambda build src/lambda"
   },
   "author": "",
   "license": "ISC",
