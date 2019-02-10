@@ -1,5 +1,6 @@
 exports.handler = function(event, context, callback) {
   // execute some code finally
+  const number = event.queryStringParameters.number;
 
   // require("../../ENV");
   const twilio = require("twilio");
@@ -19,7 +20,7 @@ exports.handler = function(event, context, callback) {
         // console.log(message.body)
         callback(null, {
           statusCode: 200,
-          body: "message.body"
+          body: "number: " + number
         });
       })
       .catch(e => {
