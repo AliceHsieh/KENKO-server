@@ -1,11 +1,11 @@
 const express = require('express'); 
 const cors = require('cors');
 const twilio = require('twilio'); 
-const ENV = require('./ENV');
+require('./ENV');
 
 //twilio requirements -- Texting API 
-const accountSid = ENV.TWILIO_ACCOUNT_SID;
-const authToken = ENV.TWILIO_AUTH_TOKEN; 
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN; 
 const client = new twilio(accountSid, authToken);
 
 const app = express(); //alias
