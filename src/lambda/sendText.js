@@ -1,6 +1,7 @@
 exports.handler = function(event, context, callback) {
   // execute some code finally
   const number = event.queryStringParameters.number;
+  const body = event.queryStringParameters.body;
 
   // require("../../ENV");
   const twilio = require("twilio");
@@ -12,7 +13,7 @@ exports.handler = function(event, context, callback) {
     // //Send Text
     client.messages
       .create({
-        body: "HELLO",
+        body: "HELLO: " + body,
         to: "+16047158724", // Text this number
         from: "+17786554127" // From my number
       })
