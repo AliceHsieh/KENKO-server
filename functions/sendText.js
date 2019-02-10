@@ -1,12 +1,7 @@
-const express = require('express'); 
-const cors = require('cors');
-const twilio = require('twilio'); 
-require('./ENV');
-
-
 exports.handler = function(event, context, callback) {
-
-// execute some code finally
+    // require('./ENV');
+    // execute some code finally
+    const twilio = require('twilio'); 
 
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN; 
